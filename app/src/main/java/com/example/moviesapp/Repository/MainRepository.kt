@@ -15,7 +15,7 @@ class MainRepository {
     //MutableLiveData: A mutable version of LiveData, allowing updates to the stored data.
     fun loadUpcoming(): LiveData<MutableList<FilmItemModel>>{
         val listData = MutableLiveData<MutableList<FilmItemModel>>()
-        val ref = firebaseDatabase.getReference("Upcoming")
+        val ref = firebaseDatabase.getReference("Upcomming")
         //Continuously listens for changes in Firebase.
         ref.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {

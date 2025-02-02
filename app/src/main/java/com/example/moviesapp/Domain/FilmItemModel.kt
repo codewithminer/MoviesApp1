@@ -8,8 +8,8 @@ data class FilmItemModel(
     var Poster: String="",
     var Time: String="",
     var Trailer: String="",
-    var Imdb: String="",
-    var Year: String="",
+    var Imdb: Int=0,
+    var Year: Int=0,
     var Price: Double=0.0,
     var Gener: ArrayList<String> = ArrayList(),
     var Casts: ArrayList<CastModel> = ArrayList()
