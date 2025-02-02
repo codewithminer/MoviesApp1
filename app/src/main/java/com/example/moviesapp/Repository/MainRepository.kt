@@ -13,15 +13,16 @@ class MainRepository {
 
     //LiveData: A lifecycle-aware data holder that allows UI components (like ViewModel) to observe changes and update automatically.
     //MutableLiveData: A mutable version of LiveData, allowing updates to the stored data.
-    fun loadIncoming(): LiveData<MutableList<FilmItemModel>>{
+    fun loadUpcoming(): LiveData<MutableList<FilmItemModel>>{
         val listData = MutableLiveData<MutableList<FilmItemModel>>()
         val ref = firebaseDatabase.getReference("Upcoming")
         //Continuously listens for changes in Firebase.
         ref.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+                //snapshot represents the entire "Upcoming" node.
                 val lists = mutableListOf<FilmItemModel>()
                 for(childSnapshot in snapshot.children){
-                    val item = childSnapshot.getValue(FilmItemModel::class.java)
+                    val item = childSnapshot.getValue(FilmItemModel::class.java) //Converts Firebase data into FilmItemModel
                     item?.let { lists.add(it) }
                 }
                 listData.value = lists
