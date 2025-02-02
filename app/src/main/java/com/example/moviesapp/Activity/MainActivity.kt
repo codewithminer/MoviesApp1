@@ -1,5 +1,6 @@
 package com.example.moviesapp.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -59,8 +60,10 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            MainScreen(onItemClick = {
-
+            MainScreen(onItemClick = { item->
+                val intent = Intent(this, DetailMovieActivity::class.java)
+                intent.putExtra("object", item)
+                startActivity(intent)
             })
         }
     }
