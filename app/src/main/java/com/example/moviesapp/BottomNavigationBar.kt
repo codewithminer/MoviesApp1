@@ -25,6 +25,12 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 @Preview
+fun BottomNavigationPreview(){
+    BottomNavigationBar()
+}
+
+
+@Composable
 fun BottomNavigationBar(){
     val bottomMenuItemsList = prepareBottomMenu()
     val contextForToast = LocalContext.current.applicationContext

@@ -49,6 +49,8 @@ class SplashActivity : BaseActivity() {
     }
 }
 
+// you can't use IntroScreen function in your app with @Preview annotation, so you can create another
+//@Preview function and call IntroScreen from it, if you want see preview in real-time.
 @Composable
 @Preview
 fun IntroScreenPreview(){
