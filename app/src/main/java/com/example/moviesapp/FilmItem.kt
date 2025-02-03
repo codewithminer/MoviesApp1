@@ -38,7 +38,8 @@ fun FilmItem(item: FilmItemModel, onItemClick: (FilmItemModel) -> Unit){
             .clickable { onItemClick(item) }
             .background(color = Color(android.graphics.Color.parseColor("#2f2f39")))
     ) {
-
+        //AsyncImage is a composable function provided by the Coil image loading library for Jetpack Compose.
+        // It is used to load and display images asynchronously from URLs or resources without blocking the UI thread.
         AsyncImage(
             model = item.Poster,
             contentDescription = null,
