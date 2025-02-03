@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.ContentDrawScope
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -37,6 +38,7 @@ fun FilmItem(item: FilmItemModel, onItemClick: (FilmItemModel) -> Unit){
             .clickable { onItemClick(item) }
             .background(color = Color(android.graphics.Color.parseColor("#2f2f39")))
     ) {
+
         AsyncImage(
             model = item.Poster,
             contentDescription = null,
